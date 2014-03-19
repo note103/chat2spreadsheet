@@ -1,4 +1,5 @@
 #!/usr/bin/env perl
+
 use strict;
 use warnings;
 
@@ -140,9 +141,9 @@ for my $line4 (@lines3) {
     }
 }
 
-#output
 print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
 
+#output
 my @line5;
 if (defined $lastday) {
     for my $output (@lines4) {
@@ -169,3 +170,9 @@ for my $last (@line5) {
         print "$last";
     }
 }
+
+
+
+
+
+
