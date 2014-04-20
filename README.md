@@ -1,4 +1,4 @@
-chat2spreadsheet
+chat2spreadsheet (c2s.pl)
 ================
 
 ## 概要
