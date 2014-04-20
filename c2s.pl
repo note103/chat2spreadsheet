@@ -43,7 +43,7 @@ for my $line (@input) {
 
 #set tags
 #replace tags that you need
-my $tags = 'book|buy|code|coffee|cook|desk|dish|eat|english|garbage|git|haircut|lunch|mail|maintenance|mtg|money|nail|note|perl|proofread|ruby|schola|sleep|skype|sql|supper|transcribe|uri|vacuum|vagrant|vim|wash|wish|youtube';
+my $tags = 'book|buy|code|coffee|cook|desk|dish|eat|english|garbage|git|haircut|lunch|mail|maintenance|mtg|mojolicious|money|nail|note|perl|proofread|rails|ruby|schola|sleep|skype|sql|supper|transcribe|uri|vacuum|vagrant|vim|wash|wish|youtube';
 my (@lines2, @lines3, @lines4);
 my ($lastday, $year);
 my $date = '\d{4}\/\d\d?\/\d\d?';
@@ -76,8 +76,26 @@ for my $line2 (@lines) {
             my $next2 = "$1\t$2, $7\t$3\t$4\t$5\t$6$8\n";
             my $out2 = "$1\t$2, $7\t$3\t$4\t$5\t$word\n";
             if ($next2 =~ /${key}/i) {
+                my $next3 = "$1\t$2, $7\t$3\t$4\t$5\t$6$8\n";
                 my $out3 = "$1\t$2, $7\t$3\t$4\t$5\t$word\n";
-                push @lines2, "$out3";
+                if ($next3 =~ /${key}/i) {
+                    my $next4 = "$1\t$2, $7\t$3\t$4\t$5\t$6$8\n";
+                    my $out4 = "$1\t$2, $7\t$3\t$4\t$5\t$word\n";
+                    if ($next4 =~ /${key}/i) {
+                        my $next5 = "$1\t$2, $7\t$3\t$4\t$5\t$6$8\n";
+                        my $out5 = "$1\t$2, $7\t$3\t$4\t$5\t$word\n";
+                        if ($next5 =~ /${key}/i) {
+                            my $out6 = "$1\t$2, $7\t$3\t$4\t$5\t$word\n";
+                            push @lines2, "$out6";
+                        } else {
+                            push @lines2, "$out5";
+                        }
+                    } else {
+                        push @lines2, "$out4";
+                    }
+                } else {
+                    push @lines2, "$out3";
+                }
             } else {
                 push @lines2, "$out2";
             }
