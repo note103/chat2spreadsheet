@@ -2,7 +2,7 @@ chat2spreadsheet (c2s.pl)
 ================
 
 ## 概要
-HipChatに入れたコメントをスプレッドシート（Excel）にコピーして見やすくするためのテキスト整形（変換）スクリプトです。
+HipChatに入れたコメントをスプレッドシート（Excel）にコピーして見やすくするためのテキスト整形（変換）スクリプトです。です
 
 ## 使い方
 1) HipChatに何か入れます。
@@ -42,5 +42,9 @@ HipChatに入れたコメントをスプレッドシート（Excel）にコピ�
 ### Slide
 - [Perl入学式の成果と過程](http://www.slideshare.net/note103/perl-entrance-lt-20140329)
 
+## Todo
+- 任意の単語が出たとき、関連するキーワードに変換した上で抽出されるようにしたい。
+  - たとえば現状では「食器洗い wash dish done」と書かないと「wash, dish, done」が抽出されないが、「食器洗い完了」とか書くだけでそれらが抽出される（「食器洗い」から「wash, dish」が、「完了」から「done」が）ようにしたい。
+
 ## コンタクト
-当スクリプトに関するご連絡は[Twitter(@note103)](https://twitter.com/note103)かIssues、プルリク等にてご遠慮なくどうぞ。
+当スクリプトに関するご意見は[Twitter(@note103)](https://twitter.com/note103)かIssues、プルリク等にてお知らせください。
